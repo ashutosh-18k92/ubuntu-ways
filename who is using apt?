@@ -1,0 +1,35 @@
+1. Find and Kill all apt-get or apt Processes
+
+	$ ps -A | grep apt
+
+	$ sudo kill -9 processnumber
+		OR
+	$ sudo kill -SIGKILL processnumber
+
+Still it says the same!!!
+
+2. Delete the lock Files
+
+	$ sudo rm /var/lib/dpkg/lock
+
+Afterwards force package(s) to reconfigure like so:
+
+	$ sudo dpkg --configure -a
+
+
+Aaahhhh????, still it doesn't work. 
+
+Alternatively, delete the lock files in the /var/lib/apt/lists/ and cache directory as below:
+
+	$ sudo rm /var/lib/apt/lists/lock
+	$ sudo rm /var/cache/apt/archives/lock
+
+
+Do the following anyway
+---------------------------------
+Next, update your packages sources list as follows:
+
+	$ sudo apt update
+		OR
+	$ sudo apt-get update
+
