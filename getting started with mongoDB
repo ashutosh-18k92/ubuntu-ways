@@ -1,0 +1,47 @@
+DAEMON COMMANDS
+--------------------------------------------------------
+
+1. Start MongoDB
+	$ sudo service mongod start 
+
+2. Check if started
+	$ sudo service mongod status
+
+3. Stop MongoDB
+	$ sudo service mongod stop
+
+4. Restart MonogDB
+	$ sudo service mongod restart
+
+*********************************************************
+
+
+
+THE MONGO SHELL
+----------------------------------------------------------
+You can run mongo shell without any command-line options to connect to a MongoDB instance running on your localhost with default port 27017:
+
+$ mongo
+
+Local MongoDB Instance on a Non-default Port
+
+$ mongo --port 32134
+
+MONGODB INSTANCE ON A REMOTE HOST
+----------------------------------------------------------
+$ mongo "mongodb://mongodb0.example.com:28015"
+		or
+$ mongo --host mongodb0.example.com --port 28015
+
+With authentication:
+
+$ mongo "mongodb://alice@mongodb0.examples.com:28015/?authSource=admin"
+		or
+$ mongo --username alice --password --authenticationDatabase admin --host mongodb0.examples.com --port 28015
+
+
+Further information on:
+* Connecting to a MongoDB Replica set
+* Using SSL/TLS
+https://docs.mongodb.com/manual/mongo/
+

@@ -1,0 +1,54 @@
+username: root
+password: ak92onmay18
+
+Source: https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
+
+--------Configure utility-------------------------------
+$ sudo mysql_secure_installation utility
+
+---------Allow remote access------------------------------
+If you have iptables enabled and want to connect to the MySQL database from another machine, you must open a port in your server’s firewall (the default port is 3306). You don’t need to do this if the application that uses MySQL is running on the same server.
+
+$ sudo ufw enable
+
+$ sudo ufw allow mysql
+
+------------Mysql Service--------------------------------
+
+$ sudo systemctl start|stop|restart mysql
+
+
+--------Enable/Disable at system startup-----------------
+
+$ sudo systemctl enable|disable mysql
+
+-------------MySql Shell---------------------------
+
+$/usr/bin/mysql -u root -p 
+
+-------------MySql Admin v5.7 and above ---------------------------
+
+> UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE User = 'root';
+
+reload the stored user information do always after adding/removing/updating users
+> FLUSH PRIVILEGES;
+
+View users 
+> SELECT User, Host, authentication_string FROM mysql.user;
+
+create a new user 
+
+> INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
+VALUES('demouser','localhost',PASSWORD('demopassword'),'','','');
+
+Grant database user permissions
+
+> GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
+
+View database grants 
+> SHOW GRANTS FOR 'demouser'@'localhost';
+
+
+
+
+
