@@ -1,0 +1,9 @@
+admin
+
+akumar
+ak92onmay18
+
+url: https://cloud.mongodb.com/v2/5e3ebcb5a6f2391b542b86e1#clusters
+
+shell connect: 
+mongo "mongodb+srv://powerxnotifications-qlbbj.mongodb.net/test"  --username akumar

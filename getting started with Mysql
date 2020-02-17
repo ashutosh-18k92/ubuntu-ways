@@ -1,6 +1,16 @@
 username: root
 password: ak92onmay18
 
+mysql server will run on port 3306 by default 
+to change the port
+
+$ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf 
+
+and change the port number and do
+
+$ sudo service mysql restart
+
+
 Source: https://support.rackspace.com/how-to/install-mysql-server-on-the-ubuntu-operating-system/
 
 --------Configure utility-------------------------------

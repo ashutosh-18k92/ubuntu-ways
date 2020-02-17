@@ -1,0 +1,10 @@
+A checksum is a small-sized datum from a block of digital data for the purpose of detecting errors which may have been introduced during its transmission or storage.
+
+To verify that if a file has been tempered in transaction or not 
+
+Step 1: Generate the checksum once the file is downloaded
+
+$ sha256sum "path/to/file" 
+
+And match the checksum with the one provided by vendor
+

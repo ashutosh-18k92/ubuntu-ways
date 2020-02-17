@@ -1,0 +1,51 @@
+iptables is a command-line firewall utility that uses policy chains to allow or block traffic. When a connection tries to establish itself on your system, iptables looks for a rule in its list to match it to. If it doesn’t find one, it resorts to the default action.
+
+$ sudo apt-get install iptables
+
+
+Types of Chains
+--------------------------------------------
+
+iptables uses three different chains: input, forward, and output
+
+$ iptables -L | grep policy
+
+$ iptables --policy INPUT|OUTPUT|FORWARD ACCEPT|DROP|REJECT
+
+	Accept – Allow the connection.
+
+	Drop – Drop the connection, act like it never happened.
+
+	Reject – Don’t allow the connection, but send back an error.
+
+Input – This chain is used to control the behavior for incoming connections.
+
+Forward – This chain is used for incoming connections that aren’t actually being delivered locally. Think of a router – data is always being sent to it but rarely actually destined for the router itself; the data is just forwarded to its target. Unless you’re doing some kind of routing, NATing, or something else on your system that requires forwarding, you won’t even use this chain.
+
+Output – This chain is used for outgoing connections. For example, if you try to ping howtogeek.com, iptables will check its output chain to see what the rules are regarding ping and howtogeek.com before making a decision to allow or deny the connection attempt.
+
+Allowing or Blocking Specific Connections
+---------------------------------------------------
+
+Single IP address:
+$ iptables -A INPUT -s 10.10.10.10 -j DROP
+
+Range of IP address:
+$ iptables -A INPUT -s 10.10.10.0/255.255.255.0 -j DROP
+
+Block connection to specific port:
+-----------------------------------------------------
+
+Block SSH from 10.10.10.10
+$ iptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j DROP
+
+Block SSH from any ip:
+$ iptables -A INPUT -p tcp --dport ssh -j DROP
+
+
+SAVE Modifications:
+--------------------------------------------------------
+sbin/iptables-save
+
+
+
