@@ -1,0 +1,10 @@
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+IAM wilson-server user
+ashutosh.kumar
+Access Key Id: AKIA2Y2BZUA3GNKSKIXR
+secret: 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
+pwd: I7v(MZv9E]a&
+az: ap-south-1

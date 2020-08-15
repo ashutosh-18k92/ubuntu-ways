@@ -1,0 +1,41 @@
+=================GPG commands======================
+
+List Keys
+------------------
+$ gpg -k 
+$ gpg --list-keys
+
+
+Key Import
+----------
+
+$ gpg --import <key-file>
+
+Generate Key
+-------------
+
+$ gpg --gen-key  //follow the instructions after issuing the command
+
+
+Export Key
+------------
+
+Export Public Key
+
+$ gpg --armor --output <file> --export <user_id>
+
+Export Private Key
+
+$ gpg --armor --output <file> --export-secret-key <user_id>
+
+
+
+Encrypt
+--------
+
+$ gpg --output <file>.gpg --encrypt <user_id> <file_to_encrypt>
+
+Decrypt
+----------
+//Given that the private key is imported 
+$ gpg --output <file> --decrypt <gpg file> 
