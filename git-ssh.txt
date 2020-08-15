@@ -1,0 +1,12 @@
+Authenticating using SSH
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
+Step 1: Generate Key
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Step 2: Add *.pub key to github
+
+Step 3: Test Connection
+
+$ ssh -T git@github.com
