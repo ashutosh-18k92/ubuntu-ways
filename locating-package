@@ -1,0 +1,3 @@
+If you installed a package using apt  and don't know where did it go?
+
+$ readlink -f $(which app_name)
