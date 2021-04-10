@@ -1,5 +1,10 @@
+$ sudo mysql 
+$ sudo mysql -u root -p 
 username: root
-password: ak92onmay18
+password: pi=3.14159
+
+
+$ sudo systemctl start mysql
 
 mysql server will run on port 3306 by default 
 to change the port
@@ -48,8 +53,7 @@ View users
 
 create a new user 
 
-> INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
-VALUES('demouser','localhost',PASSWORD('demopassword'),'','','');
+> INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject) VALUES('demouser','localhost',PASSWORD('demopassword'),'','','');
 
 Grant database user permissions
 

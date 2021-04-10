@@ -1,0 +1,20 @@
+setting custom font size
+----------------------------
+
+create a file ~/.Xresources
+
+xterm*faceName: Monospace
+xterm*faceSize: 12
+
+save
+and run 
+$ xrdb -merge ~/.Xresources
+
+extra configs
+
+visualBell: Boolean
+xterm*background: COLOR
+xterm*foreground: COLOR
+xterm*poinercolor: COLOR
+
+VISIT FOR MORE: https://how-to.fandom.com/wiki/How_to_configure_xterm
