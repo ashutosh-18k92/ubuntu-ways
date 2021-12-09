@@ -2,8 +2,12 @@ https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/
 
 ADD PPA
 ---------
-sudo add-apt-repository ppa:PPA_Name/ppa
+# add-apt-repository ppa:PPA_Name/ppa
 
 REMOVE PPA
 ----------
-sudo add-apt-repository --remove ppa:PPA_Name/ppa
+# add-apt-repository --remove ppa:PPA_Name/ppa
+
+LIST PPA Repositories
+-----------------------
+$ apt policy
